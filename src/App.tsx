@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Tabs from '@material-ui/core/Tabs' ;
+import Tab from '@material-ui/core/Tab';
+
 
 function App() {
+  
+  const [value, setValue] = useState<number>(0);
+
+  const onChange = useCallback((_, value) => {
+    setValue(value);
+  }, [setValue]);
+  
   return (
     <div className="App">
+      <Tabs value={value} onChange={onChange}>
+      <Tab label={"Item One"} />
+      <Tab label={"Item Two"} />
+      </Tabs>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
