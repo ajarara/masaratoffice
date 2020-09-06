@@ -16,8 +16,12 @@ function App() {
   return (
     <div className="App">
       <Tabs value={value} onChange={onChange}>
-      <Tab label={"Item One"} />
-      <Tab label={"Item Two"} />
+      <Tab label={"Home"} />
+      <Tab label={"About"} />
+      <Tab label={"Project"} />
+      <Tab label={"Team"} />
+      <Tab label={"Contact"} />
+
       </Tabs>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
