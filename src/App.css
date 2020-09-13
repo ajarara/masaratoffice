@@ -15,13 +15,24 @@
 
 .App-header {
   background-color: #282c34;
+  background-image: url("Image/Background.jpg");
   min-height: 100vh;
+  width: 101.5%;
+  background-size: contain;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: left;
+  justify-content: 30%;
+  font-size: calc(20px );
   color: white;
+  text-align: left;
+  color: white;
+  font-family: "sans-serif";
+
+
+}
+.headtext{
+  font-family: "sans-serif";
 }
 
 .App-link {
