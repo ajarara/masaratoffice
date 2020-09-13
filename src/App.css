@@ -1,5 +1,4 @@
 .App-header {
-  background-color: #282c34;
   background-image: url("Image/Background.jpg");
   min-height: 100vh;
   background-size: contain;
@@ -13,4 +12,9 @@
   color: white;
   font-family: "sans-serif";
 }
+
+.navigation {
+  background-color: red;
+}
+
 

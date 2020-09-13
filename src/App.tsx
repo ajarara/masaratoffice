@@ -1,20 +1,19 @@
 import React, { useState, useCallback } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import navText from './Image/Navigation_Text.png';
 import Tabs from '@material-ui/core/Tabs' ;
 import Tab from '@material-ui/core/Tab';
 import { useTheme , makeStyles } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
-// Styling 
 const useStyles = makeStyles ({
   title :{ 
     fontFamily: "sans-serif",
     textAlign: "center",
   },
-  tabs:{
+  tabs: {
     width: "50%",
-  }
+  },
 })
 
 const FullTabView = () => {
@@ -26,8 +25,8 @@ const FullTabView = () => {
   }, [setValue]);
 
   return (
-    <React.Fragment>
-      <h1 className = {classes.title}><b>Masarat Engineering Office</b></h1>
+    <div className={"navigation"}>
+      <img src={navText} />
       <Tabs value={value} onChange={onChange} className = {classes.tabs}>
         <Tab label={"Home"} />
         <Tab label={"About"}/>
@@ -35,7 +34,7 @@ const FullTabView = () => {
         <Tab label={"Team"} />
         <Tab label={"Contact"} />
       </Tabs>
-    </React.Fragment>
+    </div>
   );
 }
 
