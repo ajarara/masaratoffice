@@ -8,19 +8,18 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 // Styling 
 const useStyles = makeStyles ({
-  root:{ 
-   fontFamily: "sans-serif",
-
+  title :{ 
+    fontFamily: "sans-serif",
+    textAlign: "center",
   },
   tabs:{
     width: "50%",
   }
-
 })
 
 const FullTabView = () => {
   const classes = useStyles()
-  const [value, setValue] = useState<number>(0);
+  const [value, setValue] = useState(0);
   
   const onChange = useCallback((_, value) => {
     setValue(value);
@@ -28,10 +27,8 @@ const FullTabView = () => {
 
   return (
     <React.Fragment>
-      <h1 className = {classes.root}><b>Masarat Engineering Office</b></h1>
-
+      <h1 className = {classes.title}><b>Masarat Engineering Office</b></h1>
       <Tabs value={value} onChange={onChange} className = {classes.tabs}>
-
         <Tab label={"Home"} />
         <Tab label={"About"}/>
         <Tab label={"Projects"} />
