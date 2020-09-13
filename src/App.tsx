@@ -12,7 +12,6 @@ const useStyles = makeStyles ({
     textAlign: "center",
   },
   tabs: {
-    width: "50%",
   },
 })
 
