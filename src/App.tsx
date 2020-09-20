@@ -5,6 +5,7 @@ import Tabs from '@material-ui/core/Tabs' ;
 import Tab from '@material-ui/core/Tab';
 import { useTheme , makeStyles } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { Drawer, Button } from '@material-ui/core';
 
 const useStyles = makeStyles ({
   title :{ 
@@ -12,6 +13,8 @@ const useStyles = makeStyles ({
     textAlign: "center",
   },
   tabs: {
+  },
+  drawerItem: {
   },
 
 })
@@ -39,13 +42,35 @@ const FullTabView = () => {
   );
 }
 
+const MinimizedTabView = () => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const classes = useStyles();
+  
+  return (
+    <>
+      <Button onClick={() => setDrawerOpen(true)}>Click Me!</Button>
+      <Drawer anchor={'left'} open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+      <Button onClick={() => setDrawerOpen(false)}>Close me!</Button>
+      <Button onClick={() => setDrawerOpen(false)}>Home</Button>
+      <Button onClick={() => setDrawerOpen(false)}>About</Button>
+      <Button onClick={() => setDrawerOpen(false)}>Projects</Button>
+      <Button onClick={() => setDrawerOpen(false)}>Team</Button>
+      <Button onClick={() => setDrawerOpen(false)}>Contact</Button>
+      </Drawer>
+    </>
+  )
+}
+
 const App = () => {
   const theme = useTheme();
   const aboveLarge = useMediaQuery(theme.breakpoints.up('lg'));
   
   return (
     <div className="App">
-      {aboveLarge && <FullTabView />}
+      {aboveLarge
+        ? <FullTabView />
+        : <MinimizedTabView />
+      }
       <header className="App-header">
 
       </header>
