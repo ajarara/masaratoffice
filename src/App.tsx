@@ -1,6 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import './App.css';
 import navText from './Image/Navigation_Text.png';
+import menuIcon from './Image/menu.png';
+import menuClose from './Image/menu1.png';
 import Tabs from '@material-ui/core/Tabs' ;
 import Tab from '@material-ui/core/Tab';
 import { useTheme , makeStyles } from '@material-ui/core/styles';
@@ -48,9 +50,9 @@ const MinimizedTabView = () => {
   
   return (
     <>
-      <Button onClick={() => setDrawerOpen(true)}>Menu</Button>
+      <Button onClick={() => setDrawerOpen(true)}><img style={{width: "12px", paddingRight:"4px" , }}  src={menuIcon} />Menu</Button>
       <Drawer anchor={'left'} open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-      <Button onClick={() => setDrawerOpen(false)}>Menu</Button>
+      <Button onClick={() => setDrawerOpen(false)}><img style={{width: "12px", paddingRight:"4px" , }}  src={menuClose} />Menu</Button>
       <Button onClick={() => setDrawerOpen(false)}>Home</Button>
       <Button onClick={() => setDrawerOpen(false)}>About</Button>
       <Button onClick={() => setDrawerOpen(false)}>Projects</Button>
