@@ -12,6 +12,7 @@ const useStyles = makeStyles ({
     textAlign: "center",
   },
   tabs: {
+    color: "white",
   },
 })
 
@@ -26,9 +27,9 @@ const FullTabView = () => {
   return (
     <div className={"navigation"}>
       <img src={navText} />
-      <Tabs value={value} onChange={onChange} className = {classes.tabs}>
+      <Tabs value={value} onChange={onChange} className={classes.tabs}>
         <Tab label={"Home"} />
-        <Tab label={"About"}/>
+        <Tab label={"About"} />
         <Tab label={"Projects"} />
         <Tab label={"Team"} />
         <Tab label={"Contact"} />
