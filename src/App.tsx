@@ -12,8 +12,8 @@ const useStyles = makeStyles ({
     textAlign: "center",
   },
   tabs: {
-    color: "white",
   },
+
 })
 
 const FullTabView = () => {
@@ -26,15 +26,16 @@ const FullTabView = () => {
 
   return (
     <div className={"navigation"}>
-      <img src={navText} />
-      <Tabs value={value} onChange={onChange} className={classes.tabs}>
-        <Tab label={"Home"} />
-        <Tab label={"About"} />
-        <Tab label={"Projects"} />
-        <Tab label={"Team"} />
-        <Tab label={"Contact"} />
-      </Tabs>
-    </div>
+      <img style={{width: "15%", }} src={navText} />
+     <div>
+        <div className={"header-text"}>Home</div>
+        <div className={"header-text"}>About</div>
+        <div className={"header-text"}>Projects</div>
+        <div className={"header-text"}>Team</div>
+        <div className={"header-text"}>Contact</div>
+     </div>
+   </div>
+
   );
 }
 
@@ -46,9 +47,11 @@ const App = () => {
     <div className="App">
       {aboveLarge && <FullTabView />}
       <header className="App-header">
-      <h1>Welcome to Masarat </h1>
 
       </header>
+      <body className="body">
+        <h1 className ="nav_elements">About us</h1>
+      </body>
     </div>
   );
 }

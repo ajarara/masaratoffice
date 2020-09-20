@@ -8,23 +8,36 @@
   font-size: calc(20px );
   text-align: left;
   font-family: "sans-serif";
-}
-.App{
   background-image: url("Image/Background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;  
-
-  
+  background-size: cover;
 }
+
 
 .navigation {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: transparent;
-  padding: 16px;
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: cyan;
+
+
+}
+.header-text{
+  display: inline-block;
+  font-size: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+
 
 }
 
-
+body{ 
+  width: 100%;
+ }
+.nav_elements{
+  font-family: "sans-serif";
+  color: 000;
+  text-align: center;
+  }
