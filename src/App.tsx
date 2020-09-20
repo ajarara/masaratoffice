@@ -48,9 +48,9 @@ const MinimizedTabView = () => {
   
   return (
     <>
-      <Button onClick={() => setDrawerOpen(true)}>Click Me!</Button>
+      <Button onClick={() => setDrawerOpen(true)}>Menu</Button>
       <Drawer anchor={'left'} open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-      <Button onClick={() => setDrawerOpen(false)}>Close me!</Button>
+      <Button onClick={() => setDrawerOpen(false)}>Menu</Button>
       <Button onClick={() => setDrawerOpen(false)}>Home</Button>
       <Button onClick={() => setDrawerOpen(false)}>About</Button>
       <Button onClick={() => setDrawerOpen(false)}>Projects</Button>
