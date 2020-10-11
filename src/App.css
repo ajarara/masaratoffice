@@ -1,6 +1,7 @@
 .App-header {
   min-height: 100vh;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -10,10 +11,18 @@
   font-family: "sans-serif";
   background-image: url("Image/Background.jpg");
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
   position: relative;
 }
+
+.App-mobile-header {
+    min-height: 55vh;
+    background-position: center;
+    background-image: url("Image/Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
 
 
 .navigation {

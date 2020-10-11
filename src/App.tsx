@@ -18,7 +18,6 @@ const useStyles = makeStyles ({
   },
   drawerItem: {
   },
-
 })
 
 const FullTabView = () => {
@@ -47,7 +46,7 @@ const FullTabView = () => {
 const MinimizedTabView = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const classes = useStyles();
-  
+
   return (
     <>
       <Button onClick={() => setDrawerOpen(true)}><img style={{width: "12px", paddingRight:"4px" , }}  src={menuIcon} />Menu</Button>
@@ -67,13 +66,17 @@ const App = () => {
   const theme = useTheme();
   const aboveLarge = useMediaQuery(theme.breakpoints.up('lg'));
   
+  const className = aboveLarge
+    ? "App-header"
+    : "App-mobile-header";
+  
   return (
     <div className="App">
       {aboveLarge
         ? <FullTabView />
         : <MinimizedTabView />
       }
-      <header className="App-header">
+      <header className={className}>
 
       </header>
       <body className="body">
