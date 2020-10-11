@@ -1,5 +1,5 @@
 .App-header {
-  min-height: 100vh;
+  min-height: 80vh;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -13,7 +13,11 @@
   background-repeat: no-repeat;
   position: relative;
 }
+.App{
+  margin: 0;
+  background-color: rgb( 238, 213, 191);
 
+}
 .App-mobile-header {
     min-height: 55vh;
     background-position: center;
@@ -30,7 +34,7 @@
   text-align: center;
   margin: 0;
   padding: 0;
-  background-color: cyan;
+  background-color :rgb( 238, 213, 191);
 
 
 }
@@ -46,8 +50,21 @@
 body{ 
   width: 100%;
  }
+
+.About_us{
+  height: 200px;
+  background-color: rgb( 238, 213, 191); /* For browsers that do not support gradients */
+  background-image: linear-gradient( rgb( 238, 213, 191), white );
+}
+
 .nav_elements{
-  font-family: "sans-serif";
+  font-family: "Century Gothic";
+  font-size: 2.7rem;
   color: 000;
   text-align: center;
+  font-weight: 500;
+  line-height: 1.2;
   }
+.about_us_paragragh{
+  text-align: center;
+}

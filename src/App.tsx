@@ -80,7 +80,12 @@ const App = () => {
 
       </header>
       <body className="body">
+      <section className="About_us">
         <h1 className ="nav_elements">About us</h1>
+        <div className= "about_us_paragragh">
+          <p>We are a premier engineering company serving customers in the government and private sectors in worldwide. Our staff of engineers, architects and surveyors work with the highest innovative engineering techniques and scientific methods to provide high quality designs and practical solutions to our customers.</p>
+        </div>
+      </section>
       </body>
     </div>
   );
