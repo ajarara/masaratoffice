@@ -8,6 +8,7 @@ import Tab from '@material-ui/core/Tab';
 import { useTheme , makeStyles } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { Drawer, Button } from '@material-ui/core';
+import { AboutUs } from './About';
 
 const useStyles = makeStyles ({
   title :{ 
@@ -62,43 +63,6 @@ const MinimizedTabView = () => {
   );
 };
 
-const AboutUsCardListing = () => {
-  
-  const details = [
-    {
-      title: '20',
-      subtitle: 'YEARS OF EXPERIENCE',
-    },
-    {
-      title: '400',
-      subtitle: 'PROJECTS DONE',
-    },
-    {
-      title: '8',
-      subtitle: 'TEAM',
-    },
-    {
-      title: '380',
-      subtitle: 'HAPPY CUSTOMERS'
-    }
-  ];
-  
-  return <div className={"About_Us_Card_Listing"}>
-    {details.map((detail) => <AboutUsCard {...detail} />)}
-  </div>
-};
-
-
-const AboutUsCard: React.FC <{
-  title: string,
-  subtitle: string,
-}> = ({ title, subtitle }) => (
-  <div className={"About_Us_Card"}>
-    <p className={"About_Us_Card_Title"}>{title}</p>
-    <p className={"About_Us_Card_Subtitle"}>{subtitle}</p>
-  </div>
-);
-
 const App = () => {
   const theme = useTheme();
   const aboveLarge = useMediaQuery(theme.breakpoints.up('lg'));
@@ -119,10 +83,7 @@ const App = () => {
       <body className="body">
       <section className="About_us">
         <h1 className ="nav_elements">About us</h1>
-        <div className= "about_us_paragragh">
-          <p>We are a premier engineering company serving customers in the government and private sectors in worldwide. Our staff of engineers, architects and surveyors work with the highest innovative engineering techniques and scientific methods to provide high quality designs and practical solutions to our customers.</p>
-        </div>
-      <AboutUsCardListing />
+      <AboutUs />
       </section>
       </body>
     </div>
