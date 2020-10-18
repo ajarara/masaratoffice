@@ -52,9 +52,27 @@ body{
  }
 
 .About_us{
-  height: 200px;
+  height: 500px;
   background-color: rgb( 238, 213, 191); /* For browsers that do not support gradients */
   background-image: linear-gradient( rgb( 238, 213, 191), white );
+}
+
+/* either 4x1 or 2x2 */
+/* if 2x2 margin margin horizontal should be margin vertical */
+
+.About_Us_Card_Listing {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.About_Us_Card {
+  border: 0.01rem solid;
+  border-radius: 3px;
+  text-align: center;
+  width: 20%;
+  min-width: 150px;
+  max-width: 200px;
+  margin-bottom: 10px;
 }
 
 .nav_elements{
