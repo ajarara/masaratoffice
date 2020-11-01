@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMediaQuery, useTheme } from '@material-ui/core';
 
 const AboutUsCard: React.FC <{
@@ -30,24 +30,45 @@ const details = [
   }
 ];
 
-const AboutUsCardListingHorizontal = () => {
+// when the about card listing is shown
+// - start counting up until the max
+// - don't recount when the user scrolls up and back down 
+
+// count from 
+const useTimedCount = () => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (count < 400) {
+        setCount(count + 1);
+      }
+    }, 20);
+    return () => clearTimeout(timer);
+  }, [count, setCount]);
+
+  return count;
+}
+
+
+const AboutUsCardListingHorizontal: React.FC<{count: number}> = ({ count }) => {
   return <div className={"About_Us_Card_Listing"}>
-    <AboutUsCard title={'20'} subtitle={'YEARS OF EXPERIENCE'} />
-    <AboutUsCard title={'400'} subtitle={'PROJECTS DONE'} />
-    <AboutUsCard title={'8'} subtitle={'TEAM'} />
-    <AboutUsCard title={'380'} subtitle={'HAPPY CUSTOMERS'} />
+    <AboutUsCard title={`${Math.floor(count / 20)}`} subtitle={'YEARS OF EXPERIENCE'} />
+    <AboutUsCard title={`${Math.floor(count)}`} subtitle={'PROJECTS DONE'} />
+    <AboutUsCard title={`${Math.floor(count / 50)}`} subtitle={'TEAM'} />
+    <AboutUsCard title={`${Math.floor(count / 1.052631578947368)}`} subtitle={'HAPPY CUSTOMERS'} />
   </div>
 };
 
-const AboutUsCardListingGrid = () => {
+const AboutUsCardListingGrid: React.FC<{count: number}> = ({ count }) => {
   return <>
     <div className={"About_Us_Card_Listing"}>
-      <AboutUsCard title={'20'} subtitle={'YEARS OF EXPERIENCE'} />
-      <AboutUsCard title={'400'} subtitle={'PROJECTS DONE'} />
+      <AboutUsCard title={`${Math.floor(count / 20)}`} subtitle={'YEARS OF EXPERIENCE'} />
+      <AboutUsCard title={`${Math.floor(count)}`} subtitle={'PROJECTS DONE'} />
     </div>
     <div className={"About_Us_Card_Listing"}>
-      <AboutUsCard title={'8'} subtitle={'TEAM'} />
-      <AboutUsCard title={'380'} subtitle={'HAPPY CUSTOMERS'} />
+      <AboutUsCard title={`${Math.floor(count / 50)}`} subtitle={'TEAM'} />
+      <AboutUsCard title={`${Math.floor(count / 1.052631578947368)}`} subtitle={'HAPPY CUSTOMERS'} />
     </div>
   </>
 };
@@ -63,14 +84,21 @@ const AboutUsDescription = () => {
 
 }
 
-export const AboutUs = () => {
+export const AboutUs: React.FC = () => {
+  const count = useTimedCount();
+
   const theme = useTheme();
   const aboveLarge = useMediaQuery(theme.breakpoints.up('lg'));
+  const timedCount = useTimedCount();
+
+  useEffect(() => {
+    console.log(timedCount);
+  }, [timedCount]);
 
   return <>
     <AboutUsDescription />
     {aboveLarge
-      ? <AboutUsCardListingHorizontal />
-      : <AboutUsCardListingGrid />}
+      ? <AboutUsCardListingHorizontal count={count}/>
+      : <AboutUsCardListingGrid count={count}/>}
   </>
 };

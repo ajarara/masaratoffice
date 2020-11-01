@@ -67,6 +67,7 @@ const App = () => {
   const theme = useTheme();
   const aboveLarge = useMediaQuery(theme.breakpoints.up('lg'));
   
+  // http://pano.autodesk.com/pano.html?url=jpgs%2Fc258cd7e-ee1e-4d71-b078-5ba5fe97eab4&fbclid=IwAR2GdGaDeYXRR7gza9XyAH7qWTD0eIzMve2kxoTbvrYoAFmBHwjxl2-VuVQ
   const className = aboveLarge
     ? "App-header"
     : "App-mobile-header";
@@ -83,7 +84,7 @@ const App = () => {
       <body className="body">
       <section className="About_us">
         <h1 className ="nav_elements">About us</h1>
-      <AboutUs />
+        <AboutUs />
       </section>
       </body>
     </div>
