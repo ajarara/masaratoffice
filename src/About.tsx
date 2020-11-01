@@ -73,8 +73,18 @@ const AboutUsCardListingGrid: React.FC<{count: number}> = ({ count }) => {
   </>
 };
 
-const AboutUsForm = () => {
-  return <></>
+const AboutUsForm  = () => {
+  return <div style = {{display: "flex", flexDirection: "column" , padding: "16px", margin: "8px"}}>
+
+      <p>BE PART OF OUR BUSINESS</p>
+      <h1>Request A Quote</h1>
+      <input placeholder = "First name"></input>
+      <input placeholder = "Last name"></input>
+      <input placeholder = "Email"></input>
+      <input placeholder = "Phone"></input>
+      <input className = "AboutUsMessage" placeholder = "Message ..." ></input>
+
+  </div>
 };
 
 const AboutUsDescription = () => {
@@ -95,10 +105,12 @@ export const AboutUs: React.FC = () => {
     console.log(timedCount);
   }, [timedCount]);
 
-  return <>
-    <AboutUsDescription />
-    {aboveLarge
-      ? <AboutUsCardListingHorizontal count={count}/>
-      : <AboutUsCardListingGrid count={count}/>}
-  </>
+  return <div style = {{display: "flex", }}>
+    <AboutUsForm/>
+    <div><AboutUsDescription />
+      {aboveLarge
+        ? <AboutUsCardListingHorizontal count={count}/>
+        : <AboutUsCardListingGrid count={count}/>}
+    </div>
+  </div>
 };
