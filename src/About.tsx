@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useMediaQuery, useTheme } from '@material-ui/core';
+import { useMediaQuery, useTheme, makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles ({
+  aboutUsInput: {
+    
+  },
+})
 
 const AboutUsCard: React.FC <{
   title: string,
