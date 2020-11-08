@@ -17,9 +17,19 @@ const useStyles = makeStyles ({
     fontFamily: "sans-serif",
     textAlign: "center",
   },
-  tabs: {
+  navigation: {
+    listStyleType: "none",
+    textAlign: "center",
+    margin: '3px',
+    backgroundColor: "rgb( 238, 213, 191)",
+    display: 'flex',
+    justifyContent: 'space-between',
   },
-  drawerItem: {
+  navigationLogo: {
+    width: '15%',
+  },
+  navigationLinks: {
+    alignSelf: 'flex-end',
   },
 })
 
@@ -32,9 +42,9 @@ const FullTabView = () => {
   }, [setValue]);
 
   return (
-    <div className={"navigation"}>
-      <img style={{width: "15%", }} src={navText} />
-     <div>
+    <div className={classes.navigation}>
+      <img className={classes.navigationLogo} src={navText} />
+      <div className={classes.navigationLinks}>
         <AnchorLink href= "#home" className={"header-text"}>Home</AnchorLink>
         <AnchorLink href= "#about" className={"header-text"}>About</AnchorLink>
         <AnchorLink href= "#projects" className={"header-text"}>Projects</AnchorLink>
@@ -42,7 +52,6 @@ const FullTabView = () => {
         <AnchorLink href= "#Contact" className={"header-text"}>Contact</AnchorLink>
      </div>
    </div>
-
   );
 }
 
