@@ -128,8 +128,7 @@ export const AboutUs: React.FC = () => {
   }, [timedCount]);
 
   return <div id = "about" style = {{display: "flex", }}>
-    <AboutUsForm/>
-    <div><AboutUsDescription />
+    {aboveLarge && <AboutUsForm />}    <div><AboutUsDescription />
       {aboveLarge
         ? <AboutUsCardListingHorizontal count={count}/>
         : <AboutUsCardListingGrid count={count}/>}

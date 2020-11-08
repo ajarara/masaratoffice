@@ -38,8 +38,8 @@ const FullTabView = () => {
         <AnchorLink href= "#home" className={"header-text"}>Home</AnchorLink>
         <AnchorLink href= "#about" className={"header-text"}>About</AnchorLink>
         <AnchorLink href= "#projects" className={"header-text"}>Projects</AnchorLink>
-        <AnchorLink href= "#home" className={"header-text"}>Team</AnchorLink>
-        <AnchorLink href= "#home" className={"header-text"}>Contact</AnchorLink>
+        <AnchorLink href= "#Team" className={"header-text"}>Team</AnchorLink>
+        <AnchorLink href= "#Contact" className={"header-text"}>Contact</AnchorLink>
      </div>
    </div>
 
@@ -54,12 +54,12 @@ const MinimizedTabView = () => {
     <>
       <Button onClick={() => setDrawerOpen(true)}><img style={{width: "12px", paddingRight:"4px" , }}  src={menuIcon} />Menu</Button>
       <Drawer anchor={'left'} open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-      <Button onClick={() => setDrawerOpen(false)}><img style={{width: "12px", paddingRight:"4px" , }}  src={menuClose} />Menu</Button>
-      <Button onClick={() => setDrawerOpen(false)}>Home</Button>
-      <Button onClick={() => setDrawerOpen(false)}>About</Button>
-      <Button onClick={() => setDrawerOpen(false)}>Projects</Button>
-      <Button onClick={() => setDrawerOpen(false)}>Team</Button>
-      <Button onClick={() => setDrawerOpen(false)}>Contact</Button>
+      <Button className={"header-text-min"} onClick={() => setDrawerOpen(false)}><img style={{width: "12px", paddingRight:"4px" , }}  src={menuClose} />Menu</Button>
+      <AnchorLink className={"header-text-min"} href= "#home" onClick={() => setDrawerOpen(false)}>Home</AnchorLink>
+      <AnchorLink className={"header-text-min"} href= "#about" onClick={() => setDrawerOpen(false)}>About</AnchorLink>
+      <AnchorLink className={"header-text-min"} href= "projects" onClick={() => setDrawerOpen(false)}>Projects</AnchorLink>
+      <AnchorLink className={"header-text-min"} href= "#team" onClick={() => setDrawerOpen(false)}>Team</AnchorLink>
+      <AnchorLink className={"header-text-min"} href= "#contact" onClick={() => setDrawerOpen(false)}>Contact</AnchorLink>
       </Drawer>
     </>
   );

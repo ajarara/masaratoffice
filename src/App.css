@@ -43,8 +43,19 @@
   font-size: 20px;
   padding-right: 30px;
   padding-left: 30px;
+  text-decoration-line: none;
+  text-decoration-color: black;
 
 
+}
+.header-text-min{
+  display: inline-block;
+  font-size: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  text-decoration-line: none;
+  text-decoration-color: black;
+  font-family: "sans-serif";
 }
 
 body{ 
