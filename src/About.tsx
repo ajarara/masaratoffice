@@ -2,9 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { useMediaQuery, useTheme, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles ({
-  aboutUsInput: {
+  aboutUsInput: { 
+    paddingBottom : "12px" ,
+    paddingTop: "2px",
+    margin : "8px"
+
     
   },
+  title:{
+    margin:"2px",
+    fontSize: "20px" ,
+    textAlign: "center",
+
+
+
+  },
+  aboutUsForm:{
+    display: "flex", flexDirection: "column" , padding: "16px", margin: "8px",
+  }
 })
 
 const AboutUsCard: React.FC <{
@@ -78,17 +93,18 @@ const AboutUsCardListingGrid: React.FC<{count: number}> = ({ count }) => {
     </div>
   </>
 };
-
+ // ABOUT US FORM 
 const AboutUsForm  = () => {
-  return <div style = {{display: "flex", flexDirection: "column" , padding: "16px", margin: "8px"}}>
+  const styles = useStyles ()
+  return <div className = {styles.aboutUsForm}>
 
-      <p>BE PART OF OUR BUSINESS</p>
-      <h1>Request A Quote</h1>
-      <input placeholder = "First name"></input>
-      <input placeholder = "Last name"></input>
-      <input placeholder = "Email"></input>
-      <input placeholder = "Phone"></input>
-      <input className = "AboutUsMessage" placeholder = "Message ..." ></input>
+      <p className = {styles.title}>BE PART OF OUR BUSINESS</p>
+      <p className = {styles.title}>Request A Quote</p>
+      <input className= {styles.aboutUsInput} placeholder = "First name"></input>
+      <input className= {styles.aboutUsInput} placeholder = "Last name"></input>
+      <input className= {styles.aboutUsInput} placeholder = "Email"></input>
+      <input className= {styles.aboutUsInput}  placeholder = "Phone"></input>
+      <input className= {styles.aboutUsInput} placeholder = "Message ..." ></input>
 
   </div>
 };
