@@ -127,7 +127,7 @@ export const AboutUs: React.FC = () => {
     console.log(timedCount);
   }, [timedCount]);
 
-  return <div style = {{display: "flex", }}>
+  return <div id = "about" style = {{display: "flex", }}>
     <AboutUsForm/>
     <div><AboutUsDescription />
       {aboveLarge

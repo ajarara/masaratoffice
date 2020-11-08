@@ -33,11 +33,11 @@ const FullTabView = () => {
     <div className={"navigation"}>
       <img style={{width: "15%", }} src={navText} />
      <div>
-        <div className={"header-text"}>Home</div>
-        <div className={"header-text"}>About</div>
-        <div className={"header-text"}>Projects</div>
-        <div className={"header-text"}>Team</div>
-        <div className={"header-text"}>Contact</div>
+        <a href= "#home" className={"header-text"}>Home</a>
+        <a href= "#about" className={"header-text"}>About</a>
+        <a href= "#projects" className={"header-text"}>Projects</a>
+        <a href= "#home" className={"header-text"}>Team</a>
+        <a href= "#home" className={"header-text"}>Contact</a>
      </div>
    </div>
 
