@@ -9,6 +9,8 @@ import { useTheme , makeStyles } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { Drawer, Button } from '@material-ui/core';
 import { AboutUs } from './About';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+
 
 const useStyles = makeStyles ({
   title :{ 
