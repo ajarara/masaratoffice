@@ -89,17 +89,24 @@ const App = () => {
         ? <FullTabView />
         : <MinimizedTabView />
       }
-      <header className={className}>
-
+      <header>
+      <iframe
+    src={'https://meet.google.com/linkredirect?authuser=0&dest=http%3A%2F%2Fpano.autodesk.com%2Fpano.html%3Fmono%3Djpgs%252F9450daf1-11fa-4fa4-a67a-4ec18c76fb97%26fbclid%3DIwAR3f6nZB9GgoI15scW7zOTyhE9KrL-2Xwoyxv2JtaQ7OpB2tWVNJ7URCi9o'}
+    style={{
+      height: '720px',
+      width: '100%',
+    }}
+      />
       </header>
       <body className="body">
       <section className="About_us">
         <h1 className ="nav_elements">About us</h1>
         <AboutUs />
       </section>
-      </body>
+    </body>
     </div>
   );
 }
 
 export default App;
+
