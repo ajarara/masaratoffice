@@ -121,11 +121,6 @@ export const AboutUs: React.FC = () => {
 
   const theme = useTheme();
   const aboveLarge = useMediaQuery(theme.breakpoints.up('lg'));
-  const timedCount = useTimedCount();
-
-  useEffect(() => {
-    console.log(timedCount);
-  }, [timedCount]);
 
   return <div id = "about" style = {{display: "flex", }}>
     {aboveLarge && <AboutUsForm />}    <div><AboutUsDescription />
