@@ -42,6 +42,7 @@ const FullTabView = () => {
   }, [setValue]);
 
   return (
+    <>
     <div className={classes.navigation}>
       <img className={classes.navigationLogo} src={navText} />
       <div className={classes.navigationLinks}>
@@ -52,6 +53,18 @@ const FullTabView = () => {
         <AnchorLink href= "#Contact" className={"header-text"}>Contact</AnchorLink>
      </div>
    </div>
+    <header>
+      <iframe
+    src={'https://meet.google.com/linkredirect?authuser=0&dest=http%3A%2F%2Fpano.autodesk.com%2Fpano.html%3Fmono%3Djpgs%252F9450daf1-11fa-4fa4-a67a-4ec18c76fb97%26fbclid%3DIwAR3f6nZB9GgoI15scW7zOTyhE9KrL-2Xwoyxv2JtaQ7OpB2tWVNJ7URCi9o'}
+    style={{
+      height: '600px',
+      width: '100%',
+    }}
+      />
+      </header>
+
+    
+   </>
   );
 }
 
@@ -70,7 +83,17 @@ const MinimizedTabView = () => {
       <AnchorLink className={"header-text-min"} href= "#team" onClick={() => setDrawerOpen(false)}>Team</AnchorLink>
       <AnchorLink className={"header-text-min"} href= "#contact" onClick={() => setDrawerOpen(false)}>Contact</AnchorLink>
       </Drawer>
+      <header>
+      <iframe
+        src={'https://meet.google.com/linkredirect?authuser=0&dest=http%3A%2F%2Fpano.autodesk.com%2Fpano.html%3Fmono%3Djpgs%252F9450daf1-11fa-4fa4-a67a-4ec18c76fb97%26fbclid%3DIwAR3f6nZB9GgoI15scW7zOTyhE9KrL-2Xwoyxv2JtaQ7OpB2tWVNJ7URCi9o'}
+        style={{
+          height: '600px',
+          width: '100%',
+    }}
+      />
+      </header>
     </>
+
   );
 };
 
@@ -89,15 +112,7 @@ const App = () => {
         ? <FullTabView />
         : <MinimizedTabView />
       }
-      <header>
-      <iframe
-    src={'https://meet.google.com/linkredirect?authuser=0&dest=http%3A%2F%2Fpano.autodesk.com%2Fpano.html%3Fmono%3Djpgs%252F9450daf1-11fa-4fa4-a67a-4ec18c76fb97%26fbclid%3DIwAR3f6nZB9GgoI15scW7zOTyhE9KrL-2Xwoyxv2JtaQ7OpB2tWVNJ7URCi9o'}
-    style={{
-      height: '600px',
-      width: '100%',
-    }}
-      />
-      </header>
+      
       <body className="body">
       <section className="About_us">
         <h1 className ="nav_elements">About us</h1>
