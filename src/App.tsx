@@ -87,8 +87,9 @@ const MinimizedTabView = () => {
       <iframe
         src={'https://meet.google.com/linkredirect?authuser=0&dest=http%3A%2F%2Fpano.autodesk.com%2Fpano.html%3Fmono%3Djpgs%252F9450daf1-11fa-4fa4-a67a-4ec18c76fb97%26fbclid%3DIwAR3f6nZB9GgoI15scW7zOTyhE9KrL-2Xwoyxv2JtaQ7OpB2tWVNJ7URCi9o'}
         style={{
-          height: '600px',
-          width: '100%',
+          height: '375px',
+          width: '98.5%',
+
     }}
       />
       </header>
