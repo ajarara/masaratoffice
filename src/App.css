@@ -26,7 +26,7 @@
 }
 
 
-
+#webvr-container{display: none;}
 .navigation {
   list-style-type: none;
   text-align: center;
