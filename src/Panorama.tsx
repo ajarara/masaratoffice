@@ -12,7 +12,7 @@ export const LandingCanvas: React.FC = () => {
   scene.background = texture;
   const camera = new PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
   const renderer = new WebGLRenderer();
-  renderer.setSize(window.innerWidth, window.innerHeight)
+  renderer.setSize(window.innerWidth *1.0, window.innerHeight *0.98)
 
   var geometry = new BoxGeometry(1, 1, 1)
   const material = new MeshBasicMaterial({ map: texture });

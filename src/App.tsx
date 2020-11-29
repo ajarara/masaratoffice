@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useRef ,useCallback } from 'react';
 import './App.css';
 import navText from './Image/Navigation_Text.png';
 import menuIcon from './Image/menu.png';
@@ -11,6 +11,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { Drawer, Button } from '@material-ui/core';
 import { AboutUs } from './About';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+
 
 
 const useStyles = makeStyles ({
@@ -65,12 +66,14 @@ const FullTabView = () => {
 
 const MinimizedTabView = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const  drawerRef  = useRef()
+  
   const classes = useStyles();
 
   return (
     <>
       <Button onClick={() => setDrawerOpen(true)}><img style={{width: "12px", paddingRight:"4px" , }}  src={menuIcon} />Menu</Button>
-      <Drawer anchor={'left'} open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+      <Drawer anchor={'left'} ref={drawerRef} open={drawerOpen} onClose={() => setDrawerOpen(false)}>
       <Button className={"header-text-min"} onClick={() => setDrawerOpen(false)}><img style={{width: "12px", paddingRight:"4px" , }}  src={menuClose} />Menu</Button>
       <AnchorLink className={"header-text-min"} href= "#home" onClick={() => setDrawerOpen(false)}>Home</AnchorLink>
       <AnchorLink className={"header-text-min"} href= "#about" onClick={() => setDrawerOpen(false)}>About</AnchorLink>
@@ -79,14 +82,7 @@ const MinimizedTabView = () => {
       <AnchorLink className={"header-text-min"} href= "#contact" onClick={() => setDrawerOpen(false)}>Contact</AnchorLink>
       </Drawer>
       <header>
-      <iframe
-        src={'https://meet.google.com/linkredirect?authuser=0&dest=http%3A%2F%2Fpano.autodesk.com%2Fpano.html%3Fmono%3Djpgs%252F9450daf1-11fa-4fa4-a67a-4ec18c76fb97%26fbclid%3DIwAR3f6nZB9GgoI15scW7zOTyhE9KrL-2Xwoyxv2JtaQ7OpB2tWVNJ7URCi9o'}
-        style={{
-          height: '375px',
-          width: '98.5%',
-
-    }}
-      />
+            
       </header>
     </>
 
@@ -109,12 +105,12 @@ const App = () => {
         : <MinimizedTabView />
       }
       
-      <body className="body">
+      <div className="body">
       <section className="About_us">
         <h1 className ="nav_elements">About us</h1>
         <AboutUs />
       </section>
-    </body>
+    </div>
     </div>
   );
 }
