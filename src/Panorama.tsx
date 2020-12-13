@@ -1,10 +1,17 @@
 import React, { useEffect } from 'react';
-import { Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh, Color, TextureLoader, RepeatWrapping, CubeRefractionMapping } from 'three';
+import { Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh, Color, CubeTextureLoader, RepeatWrapping, CubeRefractionMapping } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 export const LandingCanvas: React.FC = () => {
   const scene = new Scene();
-  const texture = new TextureLoader().load("textures/design.jpg");
+  const texture = new CubeTextureLoader().load([
+    "textures/design-1.jpg",
+    "textures/design-2.jpg",
+    "textures/design-3.jpg",
+    "textures/design-4.jpg",
+    "textures/design-6.jpg",
+    "textures/design-5.jpg",
+  ]);
   texture.wrapS = RepeatWrapping;
   texture.wrapT = RepeatWrapping;
   texture.repeat.set(1, 0.1);
