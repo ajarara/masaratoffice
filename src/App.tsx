@@ -13,7 +13,6 @@ import { AboutUs } from './About';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 
-
 const useStyles = makeStyles ({
   title :{ 
     fontFamily: "sans-serif",
