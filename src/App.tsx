@@ -26,8 +26,12 @@ const useStyles = makeStyles ({
     display: 'flex',
     justifyContent: 'space-between',
   },
-  navigationLogo: {
+  navigationTitle: {
     width: '15%',
+    fontFamily: "Rubik",
+    fontSize: 34,
+
+
   },
   navigationLinks: {
     alignSelf: 'flex-end',
@@ -45,7 +49,7 @@ const FullTabView = () => {
   return (
     <>
     <div className={classes.navigation}>
-      <img className={classes.navigationLogo} src={navText} />
+     <b className={classes.navigationTitle}>Masarat</b>
       <div className={classes.navigationLinks}>
         <AnchorLink href= "#home" className={"header-text"}>Home</AnchorLink>
         <AnchorLink href= "#about" className={"header-text"}>About</AnchorLink>
@@ -81,7 +85,7 @@ const MinimizedTabView = () => {
       <AnchorLink className={"header-text-min"} href= "#contact" onClick={() => setDrawerOpen(false)}>Contact</AnchorLink>
       </Drawer>
       <header>
-            
+             <LandingCanvas />
       </header>
     </>
 
