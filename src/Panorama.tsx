@@ -1,8 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh, Color, CubeTextureLoader, RepeatWrapping, CubeRefractionMapping } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
+
+const useWindowSize = () => {
+  const [size, setSize] = useState({
+    innerWidth: window.innerWidth,
+    innerHeight: window.innerHeight,
+  })
+  ;
+  useLayoutEffect(() => {
+    const updateSize = () => {
+      const { innerWidth, innerHeight } = window
+      setSize({ innerWidth, innerHeight });
+    };
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+  
+  return size;
+}
+
 export const LandingCanvas: React.FC = () => {
+  const { innerWidth, innerHeight } = useWindowSize();
+  
   const scene = new Scene();
   const texture = new CubeTextureLoader().load([
     "textures/design-1.jpg",
@@ -17,9 +38,9 @@ export const LandingCanvas: React.FC = () => {
   texture.repeat.set(1, 0.1);
   
   scene.background = texture;
-  const camera = new PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+  const camera = new PerspectiveCamera(75, innerWidth/innerHeight, 0.1, 1000);
   const renderer = new WebGLRenderer();
-  renderer.setSize(window.innerWidth *1.0, window.innerHeight *0.98)
+  renderer.setSize(innerWidth *1.0, innerHeight *0.98)
 
   // var geometry = new BoxGeometry(1, 1, 1)
   // const material = new MeshBasicMaterial({ map: texture });
@@ -34,11 +55,10 @@ export const LandingCanvas: React.FC = () => {
   (controls as any).enableZoom = false ;
   useEffect(() => {
     const element = document.getElementById('__landingCanvas');
-    element!.parentNode!.replaceChild(renderer.domElement, element!);
+    element?.parentNode?.replaceChild(renderer.domElement, element!);
     const animate = () => {
       requestAnimationFrame(animate);
-
-    renderer.render(scene, camera);
+      renderer.render(scene, camera);
     };
     animate();
     console.log("firing");
