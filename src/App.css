@@ -14,7 +14,7 @@
 }
 .App{
   margin: 0;
-  background-color: rgb( 238, 213, 191);
+  background-color:#DEB887;
 
 }
 .App-mobile-header {
@@ -32,7 +32,7 @@
   text-align: center;
   margin: 0;
   padding: 0;
-  background-color :rgb( 238, 213, 191);
+  background-color :#DEB887;
 
 
 }
@@ -62,8 +62,8 @@ body{
 
 .About_us{
   height: 500px;
-  background-color: rgb( 238, 213, 191); /* For browsers that do not support gradients */
-  background-image: linear-gradient( rgb( 238, 213, 191), white );
+  background-color: beige; /* For browsers that do not support gradients */
+  background-image: linear-gradient( #DEB887, white );
 }
 
 /* either 4x1 or 2x2 */

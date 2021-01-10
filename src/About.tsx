@@ -112,22 +112,7 @@ const AboutUsCardListingGrid: React.FC<{count: number}> = ({ count }) => {
     </div>
   </>
 };
- // ABOUT US FORM 
-const AboutUsForm  = () => {
-  const styles = useStyles();
-  
-  return <div className = {styles.aboutUsForm}>
 
-      <p className = {styles.title}>BE PART OF OUR BUSINESS</p>
-      <p className = {styles.title}>Request A Quote</p>
-      <input className= {styles.aboutUsInput} placeholder = "First name"></input>
-      <input className= {styles.aboutUsInput} placeholder = "Last name"></input>
-      <input className= {styles.aboutUsInput} placeholder = "Email"></input>
-      <input className= {styles.aboutUsInput}  placeholder = "Phone"></input>
-      <input className= {styles.aboutUsInput} placeholder = "Message ..." ></input>
-
-  </div>
-};
 
 const AboutUsDescription = () => {
   return <div className= "about_us_paragragh">
@@ -143,7 +128,7 @@ export const AboutUs: React.FC = () => {
   const aboveLarge = useMediaQuery(theme.breakpoints.up('lg'));
 
   return <div id = "about" style = {{display: "flex", }}>
-    {aboveLarge && <AboutUsForm />}    <div><AboutUsDescription />
+      <div><AboutUsDescription />
       {aboveLarge
         ? <AboutUsCardListingHorizontal count={count}/>
         : <AboutUsCardListingGrid count={count}/>}
