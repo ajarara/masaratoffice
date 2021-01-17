@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useMediaQuery, useTheme, makeStyles, Theme } from '@material-ui/core';
+import {ReactSVG} from 'react-svg'
 
 interface CardStyleProps {
   grid?: boolean,
@@ -16,9 +17,12 @@ const useStyles = makeStyles({
     fontSize: "20px" ,
     textAlign: "center",
   },
-  aboutUsForm:{
-    display: "flex", flexDirection: "column" , padding: "16px", margin: "8px",
-  },
+  // aboutUsForm:{
+  //   display: "flex", flexDirection: "column" , padding: "16px", margin: "8px",
+  // },
+  AboutUsSvg:{
+    width:"70px",height:"70px",
+  }
 });
 
 const useCardStyles = makeStyles<Theme, CardStyleProps>((theme: Theme) => ({
@@ -29,38 +33,29 @@ const useCardStyles = makeStyles<Theme, CardStyleProps>((theme: Theme) => ({
     width: grid ? '40%' : '20%',
     maxWidth: '200px',
     marginBottom: '10px',
+    display: "flex",
+    flexDirection:"column",
+    alignItems: "center",
+    paddingTop: "4px",
+    justifyContent: "center",
+
   }),
 }));
-
+const AboutUsSvg: React.FC <{
+  path: string,
+}>= ({path})=> (<ReactSVG className={useStyles().AboutUsSvg} src= {path} />)
 const AboutUsCard: React.FC <{
   title: string,
   subtitle: string,
+  svg: React.ReactElement ,
   className: string,
-}> = ({ title, subtitle, className }) => (
+}> = ({ title, svg, subtitle, className }) => (
   <div className={className}>
+    {svg}
     <p className={"About_Us_Card_Title"}>{title}</p>
     <p className={"About_Us_Card_Subtitle"}>{subtitle}</p>
     </div>
 );
-
-const details = [
-  {
-    title: '20',
-    subtitle: 'YEARS OF EXPERIENCE',
-  },
-  {
-    title: '400',
-    subtitle: 'PROJECTS DONE',
-  },
-  {
-    title: '8',
-    subtitle: 'TEAM',
-  },
-  {
-    title: '380',
-    subtitle: 'HAPPY CUSTOMERS'
-  }
-];
 
 // when the about card listing is shown
 // - start counting up until the max
@@ -89,10 +84,14 @@ const AboutUsCardListingHorizontal: React.FC<{count: number}> = ({ count }) => {
   });
  
   return <div className={"About_Us_Card_Listing"}>
-    <AboutUsCard title={`${Math.floor(count / 20)}`} subtitle={'YEARS OF EXPERIENCE'} className={styles.aboutUsCard}/>
-    <AboutUsCard title={`${Math.floor(count)}`} subtitle={'PROJECTS DONE'} className={styles.aboutUsCard}/>
-    <AboutUsCard title={`${Math.floor(count / 50)}`} subtitle={'TEAM'} className={styles.aboutUsCard}/>
-    <AboutUsCard title={`${Math.floor(count / 1.052631578947368)}`} subtitle={'HAPPY CUSTOMERS'} className={styles.aboutUsCard}/>
+    <AboutUsCard title={`${Math.floor(count / 20)}`}
+     svg={<AboutUsSvg path= "svg/knowledge.svg"/>} subtitle={'YEARS OF EXPERIENCE'} className={styles.aboutUsCard}/>
+    <AboutUsCard title={`${Math.floor(count)}`}
+     svg={<AboutUsSvg path= "svg/building.svg"/>} subtitle={'PROJECTS DONE'} className={styles.aboutUsCard}/>
+    <AboutUsCard title={`${Math.floor(count / 50)}`} 
+     svg={<AboutUsSvg path= "svg/group.svg"/>}subtitle={'TEAM'} className={styles.aboutUsCard}/>
+    <AboutUsCard title={`${Math.floor(count / 1.052631578947368)}`}
+     svg={<AboutUsSvg path= "svg/rating.svg"/>} subtitle={'HAPPY CUSTOMERS'} className={styles.aboutUsCard}/>
   </div>
 };
 
@@ -103,12 +102,12 @@ const AboutUsCardListingGrid: React.FC<{count: number}> = ({ count }) => {
   
   return <>
     <div className={"About_Us_Card_Listing"}>
-      <AboutUsCard title={`${Math.floor(count / 20)}`} subtitle={'YEARS OF EXPERIENCE'} className={styles.aboutUsCard}/>
-      <AboutUsCard title={`${Math.floor(count)}`} subtitle={'PROJECTS DONE'} className={styles.aboutUsCard}/>
+      <AboutUsCard title={`${Math.floor(count / 20)}`} svg={<AboutUsSvg path= "svg/knowledge.svg"/>} subtitle={'YEARS OF EXPERIENCE'} className={styles.aboutUsCard}/>
+      <AboutUsCard title={`${Math.floor(count)}`} svg={<AboutUsSvg path= "svg/building.svg"/>} subtitle={'PROJECTS DONE'} className={styles.aboutUsCard}/>
     </div>
     <div className={"About_Us_Card_Listing"}>
-      <AboutUsCard title={`${Math.floor(count / 50)}`} subtitle={'TEAM'} className={styles.aboutUsCard}/>
-      <AboutUsCard title={`${Math.floor(count / 1.052631578947368)}`} subtitle={'HAPPY CUSTOMERS'} className={styles.aboutUsCard}/>
+      <AboutUsCard title={`${Math.floor(count / 50)}`} svg={<AboutUsSvg path= "svg/group.svg"/>} subtitle={'TEAM'} className={styles.aboutUsCard}/>
+      <AboutUsCard title={`${Math.floor(count / 1.052631578947368)}`} svg={<AboutUsSvg path= "svg/rating.svg"/>} subtitle={'HAPPY CUSTOMERS'} className={styles.aboutUsCard}/>
     </div>
   </>
 };
